@@ -26,10 +26,10 @@ public class SportbookPage extends BasePage {
     WebElement tabMulti;
 //    @FindBy (xpath = "//div[@class='MuiInputBase-root jss142 jss373 MuiInputBase-fullWidth MuiInputBase-adornedEnd jss149']")
 //    WebElement stakeValue;
+    @FindBy (xpath = "//p[contains(text(),'Minimum stake')]")
+    WebElement validateMessage;
     @FindBy (xpath = "//span[contains(text(),'Place')]")
     WebElement btnPlaceBet;
-    @FindBy (xpath = "//p[contains(text(),'Minimum')")
-    WebElement validateMessage;
 
     public MyBetsPage gotoMyBets(String stake) throws InterruptedException {
         Thread.sleep(1000);
@@ -45,16 +45,17 @@ public class SportbookPage extends BasePage {
         }
         click(tabMulti);
         Thread.sleep(500);
-        WebElement stakeValue= driver.findElement(By.xpath("//input[@class='MuiInputBase-input jss143 MuiInputBase-inputAdornedEnd jss147']"));
+        WebElement stakeValue= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]"));
         writeText(stakeValue,stake);
-        if(btnPlaceBet.isDisplayed()){
-            click(btnPlaceBet);
+        if(btnPlaceBet.isEnabled()){
+//            click(btnPlaceBet);
         }else{
             String message= validateMessage.getText();
             System.out.println(message);
             String []word= message.split(" ");
+            System.out.println(word[4]);
             writeText(stakeValue,word[4]);
-            click(btnPlaceBet);
+//            click(btnPlaceBet);
 
         }
 
