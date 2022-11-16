@@ -3,7 +3,16 @@
 <suite name="BetU">
     <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/BetU/pom.xml">
         <classes>
-            <class name="testcase.ValidateMinStake"></class>
+            <class name="testcase.ValidateBetSlip">
+                <methods>
+                    <include name="accountLevel"/>
+                    <include name="selfExclude"/>
+                    <include name="spendingLimit"/>
+                    <include name="validateMinStake"/>
+                    <include name="vailidateALternativeStake"/>
+                    <include name="gotoMyBet"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
