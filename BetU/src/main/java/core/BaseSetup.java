@@ -21,6 +21,10 @@ public class BaseSetup {
 
 
     }
+    @AfterClass
+    public void close() {
+        driver.quit();
+    }
 
 
 

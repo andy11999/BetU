@@ -14,7 +14,7 @@ public class ValidateBetSlip extends BaseSetup {
     private String alStake="10000";
     private String realStake="100";
 
-    @Test
+    @Test(priority = 1)
     public void accountLevel() throws InterruptedException{
         HomePage homePage= new HomePage(driver);
         LoginPage loginPage= new LoginPage(driver);
@@ -25,7 +25,7 @@ public class ValidateBetSlip extends BaseSetup {
         sportbookPage.getMessageAccountLevel(realStake);
     }
 
-    @Test
+    @Test(priority = 2)
     public void selfExclude() throws InterruptedException{
         HomePage homePage= new HomePage(driver);
         LoginPage loginPage= new LoginPage(driver);
@@ -35,7 +35,7 @@ public class ValidateBetSlip extends BaseSetup {
         loginPage.gotoSportbookPage("andy71", "Betu_12345");
         sportbookPage.getSelfexclude();
     }
-    @Test
+    @Test(priority = 3)
     public void spendingLimit() throws  InterruptedException{
         HomePage homePage= new HomePage(driver);
         LoginPage loginPage= new LoginPage(driver);
@@ -46,7 +46,18 @@ public class ValidateBetSlip extends BaseSetup {
         sportbookPage.getSpendingLimit(realStake);
     }
 
-    @Test
+    @Test(priority = 4)
+    public void multiSameFixture() throws  InterruptedException{
+        HomePage homePage= new HomePage(driver);
+        LoginPage loginPage= new LoginPage(driver);
+        SportbookPage sportbookPage= new SportbookPage(driver);
+        homePage.gotoUrl(BETU_URL);
+        homePage.gotoLoginPage();
+        loginPage.gotoSportbookPage("andy86", "Betu_12345");
+        sportbookPage.getMultiSameFixture();
+    }
+
+    @Test(priority = 5)
     public void validateMinStake() throws InterruptedException {
         HomePage homePage= new HomePage(driver);
         LoginPage loginPage= new LoginPage(driver);
@@ -58,7 +69,21 @@ public class ValidateBetSlip extends BaseSetup {
 
 
     }
-    @Test
+
+    @Test(priority = 6)
+    public void validateInsufficentBalance() throws InterruptedException {
+        HomePage homePage= new HomePage(driver);
+        LoginPage loginPage= new LoginPage(driver);
+        SportbookPage sportbookPage= new SportbookPage(driver);
+        homePage.gotoUrl(BETU_URL);
+        homePage.gotoLoginPage();
+        loginPage.gotoSportbookPage(username, password);
+        sportbookPage.getInsufficentBalance(alStake);
+
+
+    }
+
+    @Test(priority = 7)
     public void vailidateALternativeStake() throws InterruptedException {
         HomePage homePage= new HomePage(driver);
         LoginPage loginPage= new LoginPage(driver);
@@ -67,10 +92,8 @@ public class ValidateBetSlip extends BaseSetup {
         homePage.gotoLoginPage();
         loginPage.gotoSportbookPage(username, password);
         sportbookPage.getAlternativeStake(alStake);
-
-
     }
-    @Test
+    @Test(priority = 8)
     public void gotoMyBet() throws InterruptedException {
         HomePage homePage= new HomePage(driver);
         LoginPage loginPage= new LoginPage(driver);
