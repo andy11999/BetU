@@ -3,29 +3,34 @@
 <suite name="BetU">
     <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/BetU/pom.xml">
         <classes>
-            <class name="testcase.SelfExclude">
+<!--            <class name="SelfExclude">-->
+<!--                <methods>-->
+<!--                    <include name="selfExclude"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="SpendingLimit">-->
+<!--                <methods>-->
+<!--                    <include name="setSpendingLimit"/>-->
+<!--                    <include name="changeSpendingLimit"/>-->
+<!--                    <include name="removeSpendingLimit"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="testcase.AccountLevel">
                 <methods>
-                    <include name="selfExclude"/>
+                    <include name="updateAccountlevel1"/>
                 </methods>
             </class>
-            <class name="testcase.SpendingLimit">
-                <methods>
-                    <include name="setSpendingLimit"/>
-                    <include name="changeSpendingLimit"/>
-                    <exclude name="removeSpendingLimit"/>
-                </methods>
-            </class>
-            <class name="testcase.ValidateBetSlip">
-                <methods>
-                    <include name="accountLevel"/>
-                    <include name="selfExclude"/>
-                    <include name="spendingLimit"/>
-                    <include name="multiSameFixture"/>
-                    <include name="validateMinStake"/>
-                    <include name="vailidateALternativeStake"/>
-                    <include name="gotoMyBet"/>
-                </methods>
-            </class>
+<!--            <class name="ValidateBetSlip">-->
+<!--                <methods>-->
+<!--                    <include name="accountLevel"/>-->
+<!--                    <include name="selfExclude"/>-->
+<!--                    <include name="spendingLimit"/>-->
+<!--                    <include name="multiSameFixture"/>-->
+<!--                    <include name="validateMinStake"/>-->
+<!--                    <include name="vailidateALternativeStake"/>-->
+<!--                    <include name="gotoMyBet"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
         </classes>
     </test>
